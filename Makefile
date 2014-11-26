@@ -6,9 +6,8 @@
 
 C = gcc
 CXX = g++
-FFTW_INCLUDE_LOCATION = /home/amitmo/local/include
-CXXFLAGS = -Wall -Wno-sign-compare -O3 -fopenmp -I$(FFTW_INCLUDE_LOCATION)
-LDFLAGS = -lm -fopenmp -lfftw3 -lfftw3_omp
+CXXFLAGS = -Wall -Wno-sign-compare -O3
+LDFLAGS = -lm -fopenmp -lfftw3
 OBJECTS = convolution_example.o fftw_wrappers.o
 
 all: convolution_example
@@ -17,5 +16,5 @@ convolution_example: $(OBJECTS)
 	$(CXX) $(OBJECTS) $(LDFLAGS) -o $@ 
 
 clean:
-	rm -rf *.o crossing_probability
+	rm -rf *.o convolution_example
 
